@@ -6,4 +6,4 @@ function copyToClipboard() {
     document.execCommand("copy");
     navigator.clipboard.writeText(copyText.value);
     alert("Copied the text: " + copyText.value);
-}``
+}
