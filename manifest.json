@@ -3,9 +3,30 @@
     "name": "BypassRequest",
     "description": "Copy and Paste a Bypass Code Request for your SL.",
     "version": "1.0",
-    "action": {
-        "default_icon": "/images/icon16.png",
-        "default_popup": "popup.html"
+    "icons": {
+        "16": "/images/icon16.png",
+        "48": "/images/icon48.png",
+        "128": "/images/icon128.png"
     },
-    "permissions": []
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/images/icon16.png",
+            "48": "/images/icon48.png",
+            "128": "/images/icon128.png"
+        }
+    },
+    "options_page": "options.html",
+    "host_permissions": [
+        "https://www.google.com/*"
+    ]
 }
